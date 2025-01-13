@@ -7,10 +7,13 @@ export default {
         'recent-cascad': "url('https://static.canva.com/web/images/e733916c4616f5baa19098cc2844369b.jpg')",
       },
       colors: {
-        primary: "#000000",
-        secondary: "#6E4CD3",
-        tertiary: "#04BDCA",
-        quarternary: {
+        primary: {
+          a:"#161D6F",
+          b:"#0B2F9F",
+          c: "#0B4DC9",
+        },
+        secondary: "#1E38A9",
+        tertiary: {
           a: "#FFFFFF",
           b: "#EDECEC",
           c: "#A5A5A5",
