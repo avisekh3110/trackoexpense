@@ -30,7 +30,7 @@ export default function Navbar() {
       <div
         className={`absolute bg-tertiary-b ${
           checkActive ? "-translate-y-[15rem]" : ""
-        } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg`}
+        } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg z-10`}
       >
         <div className="h-full w-full flex flex-col justify-center items-center gap-4 font-bold tracking-widest text-primary-b">
           <Link to={"/"}>HOME</Link>
