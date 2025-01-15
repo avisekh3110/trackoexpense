@@ -5,8 +5,8 @@ import burger from "/burger.svg";
 export default function Navbar() {
   const [checkActive, setCheckActive] = useState(true);
   return (
-    <>
-      <div className="bg-primary-b w-full flex justify-between items-center lg:px-20 p-6">
+    <div className="w-screen fixed top-0 left-0">
+      <div className="bg-primary-b w-full flex justify-between items-center lg:px-20 p-6 h-24">
         <div className="text-tertiary-a text-xl tracking-wide font-bold">
           TRACKOEXPENSE
         </div>
@@ -29,8 +29,8 @@ export default function Navbar() {
       </div>
       <div
         className={`absolute bg-tertiary-b ${
-          checkActive ? "-translate-y-[15rem]" : ""
-        } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg z-10`}
+          checkActive ? "translate-x-[100%]" : ""
+        } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg`}
       >
         <div className="h-full w-full flex flex-col justify-center items-center gap-4 font-bold tracking-widest text-primary-b">
           <Link to={"/"}>HOME</Link>
@@ -38,6 +38,6 @@ export default function Navbar() {
           <Link to={"/support"}>SUPPORT</Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
