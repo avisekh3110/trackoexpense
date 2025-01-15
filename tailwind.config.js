@@ -12,7 +12,7 @@ export default {
           b:"#0B2F9F",
           c: "#0B4DC9",
         },
-        secondary: "#1E38A9",
+        secondary: {a:"#FE8178",b:"#FA9599"},
         tertiary: {
           a: "#FFFFFF",
           b: "#EDECEC",

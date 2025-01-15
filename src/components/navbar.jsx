@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import burger from "/burger.svg";
 
 export default function Navbar() {
@@ -7,16 +7,39 @@ export default function Navbar() {
   return (
     <div className="w-screen fixed top-0 left-0">
       <div className="bg-primary-b w-full flex justify-between items-center lg:px-20 p-6 h-24">
-        <div className="text-tertiary-a text-xl tracking-wide font-bold">
-          TRACKOEXPENSE
-        </div>
+        <NavLink
+          to={"/"}
+          className="text-tertiary-a text-xl tracking-wide font-bold flex justify-center items-center select-none"
+        >
+          <div>TRACK</div>
+          <div className="text-secondary-a text-3xl">O</div>
+          <div>EXPENSE</div>
+        </NavLink>
         <div className="bg-primary-a lg:w-1/6 sm:w-1/3 w-14  rounded-full sm:rounded-lg  flex gap-10 justify-around sm:px-8 items-center text-tertiary-a font-semibold h-10">
-          <Link className="hidden sm:flex" to={"/"}>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => {
+              return `hidden sm:flex  ${
+                isActive
+                  ? "text-secondary-a"
+                  : "text-tertiary-a hover:text-secondary-b"
+              }`;
+            }}
+          >
             HOME
-          </Link>
-          <Link className="hidden sm:flex" to={"/support"}>
+          </NavLink>
+          <NavLink
+            to={"/support"}
+            className={({ isActive }) => {
+              return `hidden sm:flex  ${
+                isActive
+                  ? "text-secondary-a"
+                  : "text-tertiary-a hover:text-secondary-b"
+              }`;
+            }}
+          >
             SUPPORT
-          </Link>
+          </NavLink>
           <div
             className="sm:hidden flex justify-center"
             onClick={() => {
@@ -33,9 +56,31 @@ export default function Navbar() {
         } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg`}
       >
         <div className="h-full w-full flex flex-col justify-center items-center gap-4 font-bold tracking-widest text-primary-b">
-          <Link to={"/"}>HOME</Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => {
+              return `sm:hidden flex  ${
+                isActive
+                  ? "text-secondary-a"
+                  : "text-primary-a hover:text-secondary-b"
+              }`;
+            }}
+          >
+            HOME
+          </NavLink>
           <hr className="w-full bg-black" />
-          <Link to={"/support"}>SUPPORT</Link>
+          <NavLink
+            to={"/support"}
+            className={({ isActive }) => {
+              return `sm:hidden flex  ${
+                isActive
+                  ? "text-secondary-a"
+                  : "text-primary-a hover:text-secondary-b"
+              }`;
+            }}
+          >
+            SUPPORT
+          </NavLink>
         </div>
       </div>
     </div>
