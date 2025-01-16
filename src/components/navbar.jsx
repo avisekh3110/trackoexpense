@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`absolute bg-tertiary-b ${
+        className={`sm:hidden absolute bg-tertiary-b ${
           checkActive ? "translate-x-[100%]" : ""
         } transform p-3 w-full duration-300 ease-out shadow-slate-900 shadow-lg`}
       >
