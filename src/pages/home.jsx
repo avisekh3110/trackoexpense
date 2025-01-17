@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import dashImg from "/dashImg.svg";
 import MainFrame from "../components/mainFrame";
 import Footer from "../components/footer";
-import GraphBox from "../components/graphBox";
 
 export default function Home() {
   return (
@@ -30,7 +29,6 @@ export default function Home() {
         </div>
       </div>
       <MainFrame />
-      <GraphBox />
       <Footer />
     </div>
   );

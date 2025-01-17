@@ -10,9 +10,9 @@ export default {
         primary: {
           a:"#161D6F",
           b:"#0B2F9F",
-          c: "#0B4DC9",
+          c: "#91B3FA",
         },
-        secondary: {a:"#FE8178",b:"#FA9599"},
+        secondary: {a:"#FE8178",b:"#FA9599",c:"#FBA999" },
         tertiary: {
           a: "#FFFFFF",
           b: "#EDECEC",

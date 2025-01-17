@@ -6,7 +6,7 @@ export default function Navbar() {
   const [checkActive, setCheckActive] = useState(true);
   return (
     <div className="w-screen fixed top-0 left-0">
-      <div className="bg-primary-b w-full flex justify-between items-center lg:px-20 p-6 h-24">
+      <div className="backdrop-blur-sm bg-primary-b bg-opacity-70 w-full flex justify-between items-center lg:px-20 p-6 h-24">
         <NavLink
           to={"/"}
           className="text-tertiary-a text-xl tracking-wide font-bold flex justify-center items-center select-none"
@@ -43,7 +43,14 @@ export default function Navbar() {
           <div
             className="sm:hidden flex justify-center"
             onClick={() => {
-              setCheckActive(!checkActive);
+              //! JUST IN CASE
+              // setCheckActive(!checkActive); expected that these both run together and will make true->false->ture
+              // setCheckActive(!checkActive); But that never happen
+
+              // setCheckActive((prevCheckActive) => !prevCheckActive); for solving this...we need to do this..
+              // setCheckActive((prevCheckActive) => !prevCheckActive); this will run it seperately and will make true->false->ture.
+
+              setCheckActive((prevCheckActive) => !prevCheckActive);
             }}
           >
             <img height={20} width={20} src={burger} alt="Ham" />
