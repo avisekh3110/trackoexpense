@@ -1,9 +1,28 @@
 import React from "react";
+import DeleteIcon from "/deleteIcon.svg";
 
 export default function DataTitleBox(prop) {
   return (
-    <div className="bg-primary-c flex w-full h-10 items-center justify-center p-2 rounded-md capitalize font-bold text-tertiary-a tracking-wider shadow-lg shadow-neutral-500">
-      {prop.title}
+    <div className="bg-primary-b flex w-full h-10 items-center justify-between rounded-md capitalize font-bold text-tertiary-a tracking-wider shadow-lg shadow-neutral-500 duration-300">
+      <button
+        onClick={() => {
+          console.log("First");
+        }}
+        className="w-full h-full"
+      >
+        {prop.title}
+      </button>
+
+      <div className="h-full w-10 p-2 flex items-center justify-center">
+        <button
+          onClick={() => {
+            prop.deleteDataElement(prop.id);
+          }}
+          className="bg-red-600 rounded-full text-xs h-full w-6 flex items-center justify-center hover:bg-red-800 duration-200"
+        >
+          ⛌
+        </button>
+      </div>
     </div>
   );
 }

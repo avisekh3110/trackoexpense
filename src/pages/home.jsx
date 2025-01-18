@@ -28,6 +28,7 @@ export default function Home() {
           <img src={dashImg} className="h-56 lg:h-96" alt="" />
         </div>
       </div>
+      <hr className="border-primary-c" />
       <MainFrame />
       <Footer />
     </div>
