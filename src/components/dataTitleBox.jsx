@@ -6,17 +6,19 @@ export default function DataTitleBox(prop) {
     <div className="bg-primary-b flex w-full h-10 items-center justify-between rounded-md capitalize font-bold text-tertiary-a tracking-wider shadow-lg shadow-neutral-500 duration-300">
       <button
         onClick={() => {
-          console.log("First");
+          prop.setActiveDataSheet([prop.dataSheet]);
+          console.log(prop.dataSheet);
         }}
         className="w-full h-full"
       >
-        {prop.title}
+        {prop.dataSheet.title}
       </button>
 
       <div className="h-full w-10 p-2 flex items-center justify-center">
         <button
           onClick={() => {
-            prop.deleteDataElement(prop.id);
+            prop.deleteDataElement(prop.dataSheet.id);
+            prop.setActiveDataSheet([]);
           }}
           className="bg-red-600 rounded-full text-xs h-full w-6 flex items-center justify-center hover:bg-red-800 duration-200"
         >

@@ -17,12 +17,10 @@ export default function Home() {
           <div className="text-secondary-b font-bold text-sm md:text-base lg:text-2xl ">
             "Track, Save, Thrive: Your Personal Expense Companion."
           </div>
-          <a
-            href={"#id"}
-            className="lg:mt-6 mt-2 px-4 py-2 bg-secondary-a text-white font-bold rounded-lg hover:bg-secondary-b transition duration-300"
-          >
-            Get Started
-          </a>
+          <div className="hidden md:flex md:text-base text-primary-c font-semibold">
+            Easily take control of your finances with our intuitive expense
+            tracking tool.
+          </div>
         </div>
         <div className=" h-full w-2/5 flex justify-start items-center select-none">
           <img src={dashImg} className="h-56 lg:h-96" alt="" />
