@@ -12,7 +12,7 @@ export default function MainFrame() {
   useEffect(() => {
     console.log(title);
   }, [title]);
-  const [budget, setBudget] = useState(null);
+  const [budget, setBudget] = useState(0);
   useEffect(() => {
     console.log(budget);
   }, [budget]);
@@ -26,7 +26,7 @@ export default function MainFrame() {
       };
       setDataList([...dataList, newData]);
       setTitle("");
-      setBudget(null);
+      setBudget(0);
       console.log("Added");
     }
   };
@@ -63,7 +63,7 @@ export default function MainFrame() {
               onClick={() => {
                 setIsDialogOpen(!isDialogOpen);
               }}
-              className="bg-green-500 flex justify-center items-center w-16 h-8 rounded-md text-white text-sm font-bold hover:bg-green-700 duration-200 ease-out
+              className="bg-green-500 flex justify-center items-center w-16 h-8 rounded-md text-white text-sm font-bold hover:bg-green-700 duration-200 ease-out focus:ring-2 focus:ring-green-700
             "
             >
               ADD
@@ -77,6 +77,7 @@ export default function MainFrame() {
                   dataSheet={element}
                   deleteDataElement={deleteDataElement}
                   setActiveDataSheet={setActiveDataSheet}
+                  activeDataSheet={activeDataSheet}
                 />
               );
             })}

@@ -14,6 +14,7 @@ export default function AddDialog(prop) {
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
             value={prop.title}
+            autoFocus
             onChange={(e) => prop.setTitle(e.target.value)}
           />
         </div>
@@ -42,6 +43,8 @@ export default function AddDialog(prop) {
             className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
             onClick={() => {
               prop.setIsDialog(!prop.isDialog);
+              prop.setTitle("");
+              prop.setBudget(0);
             }}
           >
             Cancel
