@@ -1,7 +1,9 @@
 import React from "react";
 import DeleteIcon from "/deleteIcon.svg";
+import { toast } from "react-toastify";
 
 export default function DataTitleBox(prop) {
+  const deleteNoti = () => toast.success("Datasheet Deleted successfully!");
   return (
     <div
       className={`${
@@ -27,8 +29,11 @@ export default function DataTitleBox(prop) {
         <button
           onClick={() => {
             prop.deleteDataElement(prop.dataSheet.id);
-            prop.activeDataSheet[0].id === prop.dataSheet.id &&
+            prop.activeDataSheet[0] &&
+              prop.activeDataSheet[0].id === prop.dataSheet.id &&
               prop.setActiveDataSheet([]);
+            console.log("deleted");
+            deleteNoti();
           }}
           className="bg-red-600 rounded-full text-xs h-full w-6 flex items-center justify-center hover:bg-red-800 duration-200"
         >

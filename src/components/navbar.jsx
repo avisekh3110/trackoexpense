@@ -15,11 +15,11 @@ export default function Navbar() {
           <div className="text-secondary-a text-3xl">O</div>
           <div>EXPENSE</div>
         </NavLink>
-        <div className="bg-primary-a lg:w-1/6 sm:w-1/3 w-14  rounded-full sm:rounded-lg  flex gap-10 justify-around sm:px-8 items-center text-tertiary-a font-semibold h-10">
+        <div className="bg-primary-a sm:w-fit w-11 rounded-full sm:rounded-lg  flex gap-6 justify-around sm:px-8 items-center text-tertiary-a font-semibold h-10">
           <NavLink
             to={"/"}
             className={({ isActive }) => {
-              return `hidden sm:flex  ${
+              return `hidden sm:flex h-full p-4 w-1/2 justify-center items-center ${
                 isActive
                   ? "text-secondary-a"
                   : "text-tertiary-a hover:text-secondary-b"
@@ -31,7 +31,7 @@ export default function Navbar() {
           <NavLink
             to={"/support"}
             className={({ isActive }) => {
-              return `hidden sm:flex  ${
+              return `hidden sm:flex h-full p-4 w-1/2 justify-center items-center  ${
                 isActive
                   ? "text-secondary-a"
                   : "text-tertiary-a hover:text-secondary-b"

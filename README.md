@@ -9,6 +9,7 @@ TrackoExpense is a simple and efficient expense tracking application built with 
 - **Analytics**: Visualize your spending habits with charts and graphs.
 - **Responsive Design**: Access your expense tracker on any device.
 - **Pictorial Representation**: View your expenses in a visual format using Recharts.
+- **Notifications**: Get real-time notifications using React-Toastify.
 
 ## Getting Started
 
@@ -62,6 +63,7 @@ The output will be in the `dist` directory.
 - **Babel**: A JavaScript compiler for converting ECMAScript 2015+ code into a backwards-compatible version.
 - **SWC**: A super-fast compiler written in Rust for transforming JavaScript/TypeScript code.
 - **Recharts**: A composable charting library built on React components.
+- **React-Toastify**: A library for adding notifications to your React application.
 
 ## Available Plugins
 

@@ -2,20 +2,23 @@ import React, { useEffect, useState } from "react";
 import GraphBox from "./graphBox";
 import DataTitleBox from "./dataTitleBox";
 import AddDialog from "../components/addDialog";
+import turtle from "/turtle.svg";
+import panda from "/panda.svg";
+import husky from "/husky.svg";
 
 export default function MainFrame() {
   const [dataList, setDataList] = useState([]);
-  console.log(dataList);
+  // console.log(dataList);
   const [activeDataSheet, setActiveDataSheet] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [title, setTitle] = useState("");
-  useEffect(() => {
-    console.log(title);
-  }, [title]);
+  // useEffect(() => {
+  //   console.log(title);
+  // }, [title]);
   const [budget, setBudget] = useState(0);
-  useEffect(() => {
-    console.log(budget);
-  }, [budget]);
+  // useEffect(() => {
+  //   console.log(budget);
+  // }, [budget]);
 
   const handleClick = () => {
     if (title !== null && budget !== "" && budget !== null) {
@@ -96,8 +99,10 @@ export default function MainFrame() {
                 </div>
               </div>
             ) : (
-              <div className="flex h-full w-full items-center justify-center text-xl text-slate-400 font-bold">
-                SELECT A DATASHEET
+              <div className="flex h-full w-full items-center justify-center text-xl text-slate-400 font-bold flex-col">
+                <img src={husky} alt="turtleSVG" height={100} width={100} />
+                <div>SELECT A DATASHEET</div>
+                <div className="font-bold text-xs">OR TRY CREATING A NEW</div>
               </div>
             )}
           </div>
