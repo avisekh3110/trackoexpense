@@ -19,7 +19,7 @@ export default function DataTitleBox(prop) {
           prop.setActiveDataSheet([prop.dataSheet]);
           console.log(prop.dataSheet);
         }}
-        className="h-full w-full overflow-hidden px-2"
+        className="h-full w-full overflow-hidden p-2"
         title={prop.dataSheet.title}
       >
         {prop.dataSheet.title}

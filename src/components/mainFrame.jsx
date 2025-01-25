@@ -5,6 +5,7 @@ import AddDialog from "../components/addDialog";
 import turtle from "/turtle.svg";
 import panda from "/panda.svg";
 import husky from "/husky.svg";
+import DataRow from "./dataRow";
 
 export default function MainFrame() {
   const [dataList, setDataList] = useState([]);
@@ -26,6 +27,41 @@ export default function MainFrame() {
         id: dataList.length === 0 ? 1 : dataList[dataList.length - 1].id + 1,
         title: title,
         budget: budget,
+        data: {
+          Feild1: [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+          ],
+          total: [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+          ],
+        },
       };
       setDataList([...dataList, newData]);
       setTitle("");
@@ -89,13 +125,48 @@ export default function MainFrame() {
         <div className="h-full w-full lg:w-5/6 sm:w-3/4 p-4">
           <div className="h-full w-full bg-white rounded-md p-2">
             {activeDataSheet.length !== 0 ? (
-              <div className="bg-tertiary-b shadow-md shadow-slate-400 h-12 w-full rounded-md flex text-slate-500 font-bold">
-                <div className=" h-full w-1/2 flex justify-start items-center px-4 text-lg tracking-wider">
-                  {activeDataSheet[0].title}
+              <div className="flex flex-col gap-3">
+                <div className="bg-tertiary-b shadow-md shadow-slate-400 h-12 w-full rounded-md flex text-slate-500 font-bold">
+                  <div className=" h-full w-1/2 flex justify-start items-center px-4 text-lg tracking-wider">
+                    {activeDataSheet[0].title}
+                  </div>
+                  <div className=" h-full w-1/2 flex justify-end items-center px-4 gap-2">
+                    <div>Budget : </div>
+                    <div className="w-24 overflow-x-scroll">
+                      {activeDataSheet[0].budget}
+                    </div>
+                  </div>
                 </div>
-                <div className=" h-full w-1/2 flex justify-end items-center px-4 gap-2">
-                  <div>Budget : </div>
-                  <div className="w-24">{activeDataSheet[0].budget}</div>
+                <div className="w-full h-[42rem] overflow-y-scroll flex flex-col">
+                  <div className="flex items-center justify-between border-b-2 border-dashed border-slate-400">
+                    <div className="bg-blue-400 flex h-full items-center justify-center w-10 py-1 border-r-2 border-dashed border-slate-500">
+                      No.
+                    </div>
+                    <div className=" w-full h-full flex justify-center items-center bg-slate-400 ">
+                      Information
+                    </div>
+                    <div className="bg-amber-400 flex h-full items-center justify-center w-20 border-l-2 border-dashed border-slate-400">
+                      Total
+                    </div>
+                  </div>
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
+                  <DataRow />
                 </div>
               </div>
             ) : (
