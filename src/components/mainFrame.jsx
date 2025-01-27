@@ -10,7 +10,8 @@ import DataRow from "./dataRow";
 export default function MainFrame() {
   const [dataList, setDataList] = useState([]);
   // console.log(dataList);
-  const [activeDataSheet, setActiveDataSheet] = useState([]);
+  const [activeDataSheet, setActiveDataSheet] = useState({});
+  // console.log(activeDataSheet.data.sno);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [title, setTitle] = useState("");
   // useEffect(() => {
@@ -28,38 +29,18 @@ export default function MainFrame() {
         title: title,
         budget: budget,
         data: {
-          Feild1: [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
+          sno: [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+            20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+          ],
+          feild: [
+            100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+            113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125,
+            126, 127, 128, 129, 130,
           ],
           total: [
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
           ],
         },
       };
@@ -124,16 +105,16 @@ export default function MainFrame() {
         </div>
         <div className="h-full w-full lg:w-5/6 sm:w-3/4 p-4">
           <div className="h-full w-full bg-white rounded-md p-2">
-            {activeDataSheet.length !== 0 ? (
+            {activeDataSheet.title != undefined ? (
               <div className="flex flex-col gap-3">
                 <div className="bg-tertiary-b shadow-md shadow-slate-400 h-12 w-full rounded-md flex text-slate-500 font-bold">
                   <div className=" h-full w-1/2 flex justify-start items-center px-4 text-lg tracking-wider">
-                    {activeDataSheet[0].title}
+                    {activeDataSheet.title}
                   </div>
                   <div className=" h-full w-1/2 flex justify-end items-center px-4 gap-2">
                     <div>Budget : </div>
                     <div className="w-24 overflow-x-scroll">
-                      {activeDataSheet[0].budget}
+                      {activeDataSheet.budget}
                     </div>
                   </div>
                 </div>
@@ -149,24 +130,16 @@ export default function MainFrame() {
                       Total
                     </div>
                   </div>
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
-                  <DataRow />
+                  {activeDataSheet.title != undefined &&
+                    activeDataSheet.data.sno.map((element) => {
+                      return (
+                        <DataRow
+                          key={element}
+                          sno={element}
+                          activeDataSheet={activeDataSheet}
+                        />
+                      );
+                    })}
                 </div>
               </div>
             ) : (
