@@ -29,32 +29,39 @@ export default function DataTitleBox(prop) {
       </button>
       <div
         onClick={() => {
-          setMoreBox(!moreBox);
-        }}
-        onBlur={() => {
+          // console.log("1");
           setMoreBox(!moreBox);
         }}
         className="h-full w-10 p-2 flex items-center justify-center"
       >
         <MoreVertIcon className="cursor-pointer" />
         {moreBox && (
-          <div className="absolute transform translate-x-[7.5rem] p-2 bg-slate-200 rounded-md flex flex-col items-start gap-2 ">
-            <button
+          <div>
+            <div
+              className="absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-5"
               onClick={() => {
-                prop.deleteDataElement(prop.dataSheet.id);
-                prop.activeDataSheet &&
-                  prop.activeDataSheet.id === prop.dataSheet.id &&
-                  prop.setActiveDataSheet({});
-                console.log("deleted");
-                deleteNoti();
+                // console.log("2");
+                setMoreBox(!moreBox);
               }}
-              className="bg-red-400 w-full rounded-md "
-            >
-              Delete
-            </button>
-            <button className="bg-green-400 w-full rounded-md px-4">
-              Change Budget
-            </button>
+            />
+            <div className="absolute transform translate-x-[1.5rem] -translate-y-[2rem] p-2 bg-zinc-300 rounded-md flex flex-col items-start gap-2 ">
+              <button
+                onClick={() => {
+                  prop.deleteDataElement(prop.dataSheet.id);
+                  prop.activeDataSheet &&
+                    prop.activeDataSheet.id === prop.dataSheet.id &&
+                    prop.setActiveDataSheet({});
+                  console.log("deleted");
+                  deleteNoti();
+                }}
+                className="bg-red-400 w-full rounded-md "
+              >
+                Delete
+              </button>
+              <button className="bg-green-400 w-full rounded-md px-4">
+                Change Budget
+              </button>
+            </div>
           </div>
         )}
       </div>

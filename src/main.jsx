@@ -5,8 +5,10 @@ import App from "./App.jsx";
 import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
+  // </StrictMode>
+  <>
     <App />
     <ToastContainer theme="colored" position="bottom-right" autoClose="4000" />
-  </StrictMode>
+  </>
 );

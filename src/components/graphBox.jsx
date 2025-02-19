@@ -43,8 +43,14 @@ export default function GraphBox() {
   ];
 
   return (
-    <div className="w-full h-96 flex justify-center items-center bg-primary-a p-4 ">
-      <div className="h-full w-full bg-slate-200 rounded-md flex items-center justify-center">
+    <div className="w-full h-96 flex flex-col gap-2 justify-center items-center bg-primary-a p-4 ">
+      <div className="text-white font-bold text-xl tracking-widest">
+        GRAPHICAL REPRESENTATION
+      </div>
+      <div
+        className="h-full w-full bg-white
+       rounded-md flex items-center justify-center"
+      >
         <LineChart
           className="h-full w-full"
           height={300}

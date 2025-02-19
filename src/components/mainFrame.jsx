@@ -118,28 +118,30 @@ export default function MainFrame() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full h-[42rem] overflow-y-scroll flex flex-col">
-                  <div className="flex items-center justify-between border-b-2 border-dashed border-slate-400">
-                    <div className="bg-blue-400 flex h-full items-center justify-center w-10 py-1 border-r-2 border-dashed border-slate-500">
+                <div className="w-full h-[42rem] flex flex-col gap-2">
+                  <div className="flex items-center justify-between rounded-md">
+                    <div className="bg-blue-400 flex h-full items-center justify-center w-10 py-1  rounded-l-md">
                       No.
                     </div>
                     <div className=" w-full h-full flex justify-center items-center bg-slate-400 ">
                       Information
                     </div>
-                    <div className="bg-amber-400 flex h-full items-center justify-center w-20 border-l-2 border-dashed border-slate-400">
+                    <div className="bg-amber-400 flex h-full items-center justify-center w-20 rounded-e-md">
                       Total
                     </div>
                   </div>
-                  {activeDataSheet.title != undefined &&
-                    activeDataSheet.data.sno.map((element) => {
-                      return (
-                        <DataRow
-                          key={element}
-                          sno={element}
-                          activeDataSheet={activeDataSheet}
-                        />
-                      );
-                    })}
+                  <div className="overflow-y-scroll rounded-md ring-1 ring-slate-400">
+                    {activeDataSheet.title != undefined &&
+                      activeDataSheet.data.sno.map((element) => {
+                        return (
+                          <DataRow
+                            key={element}
+                            sno={element}
+                            activeDataSheet={activeDataSheet}
+                          />
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
             ) : (
