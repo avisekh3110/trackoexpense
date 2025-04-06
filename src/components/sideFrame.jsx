@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import GraphBox from "./graphBox";
 import DataTitleBox from "./dataTitleBox";
 import AddDialog from "../components/addDialog";
-import turtle from "/turtle.svg";
-import panda from "/panda.svg";
 import husky from "/husky.svg";
 import DataRow from "./dataRow";
+import { dummyMonth } from "./dummydata";
 
-export default function MainFrame() {
+export default function SideFrame() {
   const [dataList, setDataList] = useState([]);
   // console.log(dataList);
   const [activeDataSheet, setActiveDataSheet] = useState({});
@@ -91,7 +90,7 @@ export default function MainFrame() {
       //   }
       // }
 
-      setDataList([...dataList, newData]);
+      setDataList([...dataList, dummyMonth]);
       setTitle("");
       setBudget(0);
       console.log("Added");
@@ -177,15 +176,36 @@ export default function MainFrame() {
                       Total
                     </div>
                   </div>
+                  <div className="flex items-center justify-between border-b-2 border-dashed border-slate-400">
+                    <div className="bg-blue-100 flex h-full items-center justify-center w-10 border-r-2 border-dashed border-slate-400"></div>
+                    <div className="w-full h-full flex justify-around items-center">
+                      {Array.from(activeDataSheet.fields).map((fieldName) => {
+                        return <div>{fieldName}</div>;
+                      })}
+                    </div>
+                    <div className="bg-amber-100 flex h-full items-center justify-center w-20 border-l-2 border-dashed border-slate-400">
+                      {activeDataSheet.total()}
+                    </div>
+                  </div>
                   <div className="overflow-y-scroll rounded-md ring-1 ring-slate-400">
                     {activeDataSheet.title != undefined &&
-                      activeDataSheet.data.sno.map((element) => {
+                      activeDataSheet.days.map((day, idx) => {
                         return (
-                          <DataRow
-                            key={element}
-                            sno={element}
-                            activeDataSheet={activeDataSheet}
-                          />
+                          <div className="flex items-center justify-between border-b-2 border-dashed border-slate-400">
+                            <div className="bg-blue-100 flex h-full items-center justify-center w-10 border-r-2 border-dashed border-slate-400">
+                              {idx + 1}
+                            </div>
+                            <div className="w-full h-full flex justify-around items-center">
+                              {Array.from(day.entries).map(
+                                ([fieldName, value]) => {
+                                  return <div>{value}</div>;
+                                }
+                              )}
+                            </div>
+                            <div className="bg-amber-100 flex h-full items-center justify-center w-20 border-l-2 border-dashed border-slate-400">
+                              {day.total()}
+                            </div>
+                          </div>
                         );
                       })}
                   </div>

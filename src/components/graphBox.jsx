@@ -43,7 +43,7 @@ export default function GraphBox() {
   ];
 
   return (
-    <div className="w-full h-96 flex flex-col gap-2 justify-center items-center bg-primary-a p-4 ">
+    <div className="w-full h- flex flex-col gap-2 justify-center items-center bg-primary-a p-4 ">
       <div className="text-white font-bold text-xl tracking-widest">
         GRAPHICAL REPRESENTATION
       </div>

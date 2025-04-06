@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import dashImg from "/dashImg.svg";
 import MainFrame from "../components/mainFrame";
 import Footer from "../components/footer";
+import SideFrame from "../components/sideFrame";
 
 export default function Home() {
   // const [line, setLine] = useState("T");
@@ -52,7 +53,8 @@ export default function Home() {
         </div>
       </div>
       <hr className="border-primary-c" />
-      <MainFrame />
+      <SideFrame />
+      {/* <MainFrame /> */}
       <Footer />
     </div>
   );

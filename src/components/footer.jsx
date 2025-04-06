@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="bg-quarternary-b h-40 text-primary flex flex-col items-center justify-center p-4 w-full">
+    <div className="bg-tertiary-a h-40 text-primary flex flex-col items-center justify-center p-4 w-full">
       <div className="mb-4 text-center">
         <h2 className="text-lg font-bold">TRACKOEXPENSE</h2>
         <p className="text-sm">© 2025 TrackOexpense. All rights reserved.</p>
